@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="poster.png" alt="CryptoTicket Banner" width="100%">
+</p>
 # 🎫 Hệ Thống Quản Lý Vé Sự Kiện Trên Blockchain (CryptoTicket)
 
 Hệ thống quản lý vé sự kiện sử dụng công nghệ Blockchain và NFT để đảm bảo tính minh bạch, chống giả mạo và quản lý check-in tự động.
