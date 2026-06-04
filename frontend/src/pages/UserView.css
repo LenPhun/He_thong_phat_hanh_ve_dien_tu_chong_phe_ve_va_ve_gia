@@ -1,0 +1,167 @@
+/* UserView.css */
+:root {
+  --bg-main: #ffffff;
+  --text-main: #111827;
+  --text-sub: #4B5563;
+  --bg-card: #ffffff;
+  --bg-info: #F9FAFB;
+  --border-color: #F3F4F6;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --qr-bg: #ffffff;
+}
+
+/* Tự động bắt giao diện Tối (Dark Mode) của trình duyệt */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: #111827;
+    --text-main: #F9FAFB;
+    --text-sub: #D1D5DB;
+    --bg-card: #1F2937;
+    --bg-info: #374151;
+    --border-color: #4B5563;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --qr-bg: #ffffff; /* Giữ QR màu trắng để điện thoại có thể quét được */
+  }
+  
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+  }
+}
+
+.uv-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.uv-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+/* Ép 2 cột nằm ngang hàng nhau */
+.uv-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.uv-card {
+  flex: 1;
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 25px -5px var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.uv-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 15px;
+}
+
+.uv-card-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.uv-event-info {
+  background-color: var(--bg-info);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.uv-info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  color: var(--text-sub);
+  font-size: 15px;
+}
+
+.uv-price-tag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  background-color: #EEF2FF;
+  border-radius: 8px;
+  border-left: 4px solid #4F46E5;
+}
+
+.uv-price-label { color: #4338CA; font-weight: 600; font-size: 15px; }
+.uv-price-value { color: #4F46E5; font-weight: 800; font-size: 20px; }
+
+.uv-select-box {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-top: 8px;
+}
+
+.uv-btn-buy {
+  width: 100%;
+  padding: 14px;
+  background-color: #4F46E5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.uv-btn-buy:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.uv-ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.uv-ticket-item {
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+}
+
+.uv-qr-wrapper {
+  background-color: var(--qr-bg); /* Luôn nền trắng cho QR */
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.uv-badge-valid { background-color: #D1FAE5; color: #059669; padding: 4px 8px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.uv-badge-used { background-color: #FEE2E2; color: #DC2626; padding: 4px 8px; border-radius: 20px; font-size: 12px; font-weight: 600; }

@@ -1,0 +1,61 @@
+/* App.css */
+:root {
+  --app-bg: #F3F4F6;
+  --nav-bg: #ffffff;
+  --text-main: #111827;
+  --border-color: #E5E7EB;
+}
+
+/* Tự động bắt giao diện tối (Dark Mode) của trình duyệt */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --app-bg: #030712; /* Nền tối cho toàn App */
+    --nav-bg: #111827; /* Nền tối cho thanh menu */
+    --text-main: #F9FAFB; /* Chữ tự động chuyển màu trắng */
+    --border-color: #374151;
+  }
+}
+
+.app-container {
+  background-color: var(--app-bg);
+  min-height: 100vh;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app-navbar {
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background-color 0.3s;
+}
+
+.app-logo {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+}
+/* Hiệu ứng tia Laser cho máy quét QR */
+@keyframes scan-laser {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 98%; opacity: 0; }
+}
+
+.laser-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #10B981;
+  box-shadow: 0 0 15px 3px rgba(16, 185, 129, 0.8); /* Tạo độ nhòe phát sáng (Glow) */
+  animation: scan-laser 2.5s infinite linear;
+  z-index: 6;
+  pointer-events: none; /* Không che khuất camera */
+}
